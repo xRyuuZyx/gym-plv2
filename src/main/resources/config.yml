@@ -1,0 +1,73 @@
+# ============================================================
+#  Gym - konfigurasi
+# ============================================================
+
+stats:
+  max-level: 50
+  # Tiap 1 level Strength = +0.1 attack damage (default attack damage = 1.0)
+  strength-damage-per-level: 0.1
+  # Tiap 1 level Defense = +0.1 armor point (max level 50 = +5 armor, kira-kira -20% damage)
+  defense-armor-per-level: 0.1
+
+training:
+  # Berapa level yang didapat setiap sesi latihan selesai
+  levels-per-session: 1
+
+machines:
+  strength:
+    # ID item/furniture di Nexo / Oraxen (pakai /gym debug untuk melihat ID)
+    ids:
+      - benchpress
+    duration-seconds: 40
+    # Pose model pemain di kamera: STANDING, SLEEPING, SWIMMING, SITTING, dll
+    pose: STANDING
+  defense:
+    ids:
+      - pullup
+    duration-seconds: 40
+    pose: STANDING
+
+camera:
+  # Jarak kamera dari pemain (blok) ke arah depan pemain
+  distance: 3.0
+  # Tinggi kamera dari kaki pemain
+  height: 1.3
+  # Tinggi titik yang dilihat kamera dari kaki pemain
+  look-height: 1.0
+  # Putar posisi kamera mengelilingi pemain (derajat). 180 = kamera pindah ke belakang
+  yaw-offset: 0
+
+messages:
+  prefix: "&8[&6Gym&8] "
+  stat-strength: "Strength"
+  stat-defense: "Defense"
+  title-strength: "&c&lBENCH PRESS"
+  title-defense: "&b&lPULL UP"
+  progress-subtitle: "{bar} &f{percent}% &7({remaining}s)"
+  done-title: "&a&lSELESAI!"
+  done-subtitle: "&f{stat} &7naik ke &eLevel {level}"
+  already-max: "&e{stat} &asudah level maksimal!"
+  spectator-deny: "&cKamu tidak bisa latihan dalam mode spectator."
+  session-cancel: "&cLatihan dibatalkan, tidak ada level yang didapat."
+  session-done: "&a{stat} naik menjadi level &e{level}&a!"
+  command-blocked: "&cKamu sedang latihan. Tekan Shift atau ketik /gym stop untuk berhenti."
+  error: "&cTerjadi kesalahan saat memulai latihan."
+  no-permission: "&cKamu tidak punya izin."
+  players-only: "&cPerintah ini hanya untuk pemain."
+  player-not-found: "&cPemain tidak ditemukan."
+  not-training: "&cKamu sedang tidak latihan."
+  invalid-usage: "&cPenggunaan: {usage}"
+  invalid-number: "&cLevel harus berupa angka."
+  invalid-stat: "&cStat harus strength atau defense."
+  stats-header: "&8&m------&r &6Gym Stats &7({player}) &8&m------"
+  stats-strength: "&cStrength: &f{level}&7/&f{max} &8| &7bonus damage &c+{bonus}"
+  stats-defense: "&bDefense: &f{level}&7/&f{max} &8| &7bonus armor &b+{bonus}"
+  set-done: "&aStat {stat} milik {player} diubah menjadi level {level}."
+  reloaded: "&aConfig Gym di-reload."
+  debug-on: "&aMode debug ON. Klik kanan alat gym untuk melihat ID-nya."
+  debug-off: "&eMode debug OFF."
+  debug-id: "&7ID item yang diklik: &e{id}"
+  help-header: "&8&m------&r &6Gym Help &8&m------"
+  help-stats: "&e/gym stats &7- Lihat stats kamu"
+  help-stop: "&e/gym stop &7- Berhenti latihan"
+  help-admin: "&e/gym stats <pemain> | set <pemain> <strength|defense> <level> | reload | debug &7(admin)"

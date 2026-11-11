@@ -1,0 +1,19 @@
+name: Gym
+version: '${project.version}'
+main: me.gym.Gym
+api-version: '1.21'
+description: Latihan gym (bench press & pull up) untuk menaikkan stat Strength dan Defense
+softdepend: [Nexo, Oraxen]
+
+commands:
+  gym:
+    description: Perintah utama plugin Gym
+    usage: /gym <stats|stop|help>
+
+permissions:
+  gym.use:
+    description: Memakai alat gym dan melihat stats sendiri
+    default: true
+  gym.admin:
+    description: Perintah admin Gym (set, reload, debug, lihat stats pemain lain)
+    default: op
